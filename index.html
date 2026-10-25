@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" class="aeline-theme">
+<html lang="ar" dir="rtl" class="axolotl-theme">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -232,25 +232,25 @@
          Inspired directly by Image 2 (Axolotl Floating Rounded Glass Pill)
          + Quick Glossary Bar for S3 University Students
     ========================================================= -->
-    <div class="fixed top-3 inset-x-0 z-50 px-3 sm:px-6 pointer-events-none">
-        <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 pointer-events-auto bg-[#14261C]/90 dark:bg-[#09231E]/90 backdrop-blur-xl text-white px-4 py-2.5 rounded-full border border-[#C5E86C]/30 shadow-xl">
+    <div class="fixed top-2 sm:top-3 inset-x-0 z-50 px-2 sm:px-6 pointer-events-none">
+        <div class="max-w-7xl mx-auto w-full flex items-center justify-between gap-1.5 sm:gap-2 pointer-events-auto bg-[#14261C]/95 dark:bg-[#09231E]/95 backdrop-blur-xl text-white px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-[#C5E86C]/30 shadow-xl overflow-hidden">
             
             <!-- Right: Student Module Identity -->
-            <div class="flex items-center gap-2.5 shrink-0">
-                <span class="w-9 h-9 rounded-full bg-[#C5E86C] text-[#14261C] flex items-center justify-center font-black text-base shadow">
+            <div class="flex items-center gap-1.5 sm:gap-2.5 min-w-0 flex-1 xl:flex-none">
+                <span class="w-7 h-7 sm:w-9 sm:h-9 shrink-0 rounded-full bg-[#C5E86C] text-[#14261C] flex items-center justify-center font-black text-xs sm:text-base shadow">
                     S3
                 </span>
-                <div class="leading-tight">
+                <div class="leading-tight min-w-0">
                     <div class="flex items-center gap-1.5">
-                        <span class="text-[11px] font-bold text-[#C5E86C]">ENS • الإجازة في التربية</span>
-                        <span class="hidden sm:inline text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-emerald-200">مجزوءة السيكوبيداغوجيا</span>
+                        <span class="text-[10px] sm:text-[11px] font-bold text-[#C5E86C] truncate">ENS • الإجازة في التربية</span>
+                        <span class="hidden sm:inline text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-emerald-200 shrink-0">مجزوءة السيكوبيداغوجيا</span>
                     </div>
-                    <p class="text-xs font-bold truncate max-w-[180px] sm:max-w-none">اضطرابات التعلم: القراءة، الكتابة، والحساب</p>
+                    <p class="text-[11px] sm:text-xs font-bold truncate">اضطرابات التعلم: القراءة، الكتابة، والحساب</p>
                 </div>
             </div>
 
             <!-- Center: Clean Axis Switcher Pills (Desktop) -->
-            <nav class="hidden xl:flex items-center gap-1 text-xs">
+            <nav class="hidden xl:flex items-center gap-1 text-xs shrink-0">
                 <a href="#intro" class="dock-link active px-3 py-1.5 rounded-full text-emerald-100 hover:bg-white/10 transition">المقدمة</a>
                 <a href="#axis1" class="dock-link px-3 py-1.5 rounded-full text-emerald-100 hover:bg-white/10 transition">المحور 1: المفاهيم</a>
                 <a href="#axis2" class="dock-link px-3 py-1.5 rounded-full text-emerald-100 hover:bg-white/10 transition">المحور 2: الدماغ</a>
@@ -261,23 +261,24 @@
                 <a href="#conclusion" class="dock-link px-3 py-1.5 rounded-full text-emerald-100 hover:bg-white/10 transition">الخاتمة</a>
             </nav>
 
-            <!-- Left: Quick Interactive Presenter Tools -->
-            <div class="flex items-center gap-1.5 shrink-0">
+            <!-- Left: Quick Interactive Presenter Tools (Compact on Mobile so it NEVER overflows) -->
+            <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
                 <!-- Open Simple Glossary Modal -->
-                <button onclick="openGlossaryModal()" class="px-3 py-1.5 rounded-full text-xs font-bold bg-[#C5E86C] text-[#14261C] hover:brightness-105 flex items-center gap-1 transition shadow">
-                    <i class="ph-bold ph-book-bookmark"></i>
-                    <span>قاموس المصطلحات المبسط</span>
+                <button onclick="openGlossaryModal()" class="px-2.5 sm:px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-[#C5E86C] text-[#14261C] hover:brightness-105 flex items-center gap-1 transition shadow">
+                    <i class="ph-bold ph-book-bookmark text-sm sm:text-base"></i>
+                    <span class="hidden sm:inline">قاموس المصطلحات المبسط</span>
+                    <span class="sm:hidden">القاموس</span>
                 </button>
 
-                <!-- Switch Between Aeline Light & Axolotl Emerald Dark -->
-                <button onclick="toggleNatureTheme()" id="themeBtn" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-emerald-100 flex items-center gap-1 transition">
-                    <i class="ph-duotone ph-leaf text-[#C5E86C]"></i>
-                    <span id="themeText" class="hidden md:inline">نمط Axolotl الزمردي</span>
+                <!-- Switch Between Axolotl Emerald Dark (Default) & Aeline Light -->
+                <button onclick="toggleNatureTheme()" id="themeBtn" title="تغيير المظهر" class="w-8 h-8 sm:w-auto sm:h-auto sm:px-3 sm:py-1.5 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-emerald-100 flex items-center justify-center gap-1 transition">
+                    <i class="ph-duotone ph-leaf text-[#C5E86C] text-base"></i>
+                    <span id="themeText" class="hidden md:inline">نمط Aeline الفاتح</span>
                 </button>
 
                 <!-- Fullscreen Button -->
                 <button onclick="toggleFullScreen()" title="ملء الشاشة للعرض في القسم" class="w-8 h-8 rounded-full bg-white/10 hover:bg-[#C5E86C] hover:text-[#14261C] flex items-center justify-center transition">
-                    <i class="ph-bold ph-corners-out"></i>
+                    <i class="ph-bold ph-corners-out text-sm sm:text-base"></i>
                 </button>
             </div>
         </div>
